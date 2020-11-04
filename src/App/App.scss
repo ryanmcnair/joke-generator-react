@@ -13,6 +13,12 @@
   }
 }
 
+.card-body {
+  text-align: center;
+  background-color: lightgreen;
+  border: none;
+}
+
 img {
   width: 50%;
   height: 50%;
@@ -41,3 +47,5 @@ img {
     transform: rotate(360deg);
   }
 }
+
+

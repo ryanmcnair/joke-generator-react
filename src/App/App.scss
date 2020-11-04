@@ -13,6 +13,17 @@
   }
 }
 
+.card-body {
+  text-align: center;
+  background-color: lightgreen;
+  border: none;
+}
+
+img {
+  width: 50%;
+  height: 50%;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -36,3 +47,5 @@
     transform: rotate(360deg);
   }
 }
+
+

@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 
 class Setup extends Component {
   render() {
+    const { setup } = this.props;
     return (
-      <p>
-        {this.props.jokes}
+      <p className="Setup">
+        {setup}
       </p>
     );
   }

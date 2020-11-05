@@ -4,9 +4,9 @@ class Setup extends Component {
   render() {
     const { setup } = this.props;
     return (
-      <p className="Setup">
+      <h4 className="Setup">
         {setup}
-      </p>
+      </h4>
     );
   }
 }

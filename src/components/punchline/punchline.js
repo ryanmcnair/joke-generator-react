@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 
 class Punchline extends Component {
   render() {
-    return <p>{this.props.punchline}</p>;
+    const { punchline } = this.props;
+
+    return <p className="Punchline">
+        {punchline}
+        </p>;
   }
 }
 

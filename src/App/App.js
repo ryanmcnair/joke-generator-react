@@ -55,8 +55,8 @@ class App extends React.Component {
           )}
           {showSetup ? (
           <>
-          <SetUp setup={this.state.jokes.setup} />
           <button className="btn btn-outline-dark btn-lg" onClick={() => { this.updatePunchline(); this.updateSetup(); }}>GET PUNCHLINE</button>
+          <SetUp setup={this.state.jokes.setup} />
           </>
           ) : (
           <>
@@ -65,9 +65,9 @@ class App extends React.Component {
           )}
           {showPunchline ? (
           <>
+          <button className="btn btn-outline-dark btn-lg" onClick={() => window.location.reload(false)}>GET A NEW JOKE</button>
           <SetUp setup={this.state.jokes.setup} />
           <Punchline punchline={this.state.jokes.punchline} />
-          <button className="btn btn-outline-dark btn-lg" onClick={() => window.location.reload(false)}>GET A NEW JOKE</button>
           </>) : (
           <>
           <div></div>

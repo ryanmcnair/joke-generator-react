@@ -10,9 +10,13 @@ class App extends React.Component {
     jokeButton: true,
     showSetup: false,
     showPunchline: false,
-  }
+  };
 
   componentDidMount() {
+    this.getJoke();
+  }
+
+  getJoke = () => {
     jokeData.getJokes().then((resp) => {
       this.setState({
         jokes: resp,
@@ -20,23 +24,32 @@ class App extends React.Component {
     });
   }
 
+  getNewJoke = () => {
+    this.setState({
+      jokeButton: false,
+      showSetup: true,
+      showPunchline: true,
+    });
+    this.getJoke();
+  };
+
   updateJokeButton = () => {
     this.setState({
       jokeButton: false,
     });
-  }
+  };
 
   updateSetup = () => {
     this.setState({
       showSetup: !this.state.showSetup,
     });
-  }
+  };
 
   updatePunchline = () => {
     this.setState({
       showPunchline: !this.state.showPunchline,
     });
-  }
+  };
 
   render() {
     const { showSetup, showPunchline, jokeButton } = this.state;
@@ -65,7 +78,7 @@ class App extends React.Component {
           )}
           {showPunchline ? (
           <>
-          <button className="btn btn-outline-dark btn-lg" onClick={() => window.location.reload(false)}>GET A NEW JOKE</button>
+          <button className="btn btn-outline-dark btn-lg" onClick={() => { this.getNewJoke(); this.updatePunchline(); }}>GET A NEW JOKE</button>
           <SetUp setup={this.state.jokes.setup} />
           <Punchline punchline={this.state.jokes.punchline} />
           </>) : (
